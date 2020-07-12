@@ -1,7 +1,11 @@
 package com.backsofangels.ingsw.utils
 
 object RetrofitEndpoints {
-    const val SERVER_BASE_URL = "https://backsofangels.serveousercontent.com"
+    //For online usage
+    //const val SERVER_BASE_URL = "https://backsofangels.serveousercontent.com"
+
+    //For local usage
+    const val SERVER_BASE_URL = "http://192.168.1.155"
     const val STRUCTURE_SEARCH_URL = "/structure/get/"
     const val RESTAURANT_SEARCH_URL = "/structure/get/restaurants"
     const val HOTEL_SEARCH_URL = "/structure/get/hotels"
