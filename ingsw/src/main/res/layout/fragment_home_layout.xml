@@ -2,26 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/homeFragmentConstraintLayout">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:id="@+id/homeFragmentHeadingPicture"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/black"/>
+
     <androidx.appcompat.widget.SearchView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="55dp"
+        app:layout_constraintTop_toBottomOf="@id/homeFragmentHeadingPicture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/homeFragmentTopPicksRecyclerView"
-        android:id="@+id/homeFragmentSearchView"/>
+        android:layoutDirection="rtl"
+        app:iconifiedByDefault="true"
+        android:id="@+id/homeFragmentSearchView"
+        android:background="@android:color/holo_blue_dark"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_height="match_parent"
+    <ScrollView
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:id="@+id/homeFragmentTopPicksRecyclerView"
-        android:orientation="vertical"
+        android:id="@+id/homeFragmentTopPicksScrollView"
         app:layout_constraintTop_toBottomOf="@id/homeFragmentSearchView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/holo_orange_dark">
+
+        <LinearLayout
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:id="@+id/homeFragmentTopPicksLinearLayout"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/homeFragmentSearchView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@android:color/holo_orange_dark"/>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

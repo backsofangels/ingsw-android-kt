@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="140dp"
+    app:contentPadding="10dp"
+    android:id="@+id/cardViewLayout"
+    cardview:cardCornerRadius="10dp"
+    cardview:cardUseCompactPadding="true"
+    cardview:cardElevation="5dp"
+
+    android:background="@android:color/holo_orange_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/cardViewConstraintLayoutInternal"
+        android:background="@android:color/holo_red_dark">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/structureCardViewPicture"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/cardViewConstraintLayoutInternal"
+            app:layout_constraintEnd_toEndOf="@id/cardViewConstraintLayoutInternal"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:id="@+id/structureCardViewNameTextView"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardViewStructureRatingBar"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewConstraintLayoutInternal"
+            app:layout_constraintStart_toStartOf="@id/cardViewConstraintLayoutInternal"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
