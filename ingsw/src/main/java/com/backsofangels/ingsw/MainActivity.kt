@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                     fragmentManager.
                     beginTransaction()
                             .add(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, HomeFragment::class.simpleName!!), "HomeFragment")
+                            .addToBackStack("HomeFragment")
                             .commit()
                 }
                 R.id.bottomNavigationViewFavorites -> {
