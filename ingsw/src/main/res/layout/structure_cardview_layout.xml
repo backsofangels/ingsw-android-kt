@@ -46,5 +46,18 @@
             android:isIndicator="true"
             android:layout_marginBottom="10dp"
             android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardViewStructureTypeLabel"
+            android:textSize="20sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/structureCardViewNameTextView"
+            app:layout_constraintStart_toEndOf="@id/cardViewStructureRatingBar"
+            app:layout_constraintEnd_toEndOf="@id/cardViewConstraintLayoutInternal"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
