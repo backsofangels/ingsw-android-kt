@@ -1,5 +1,6 @@
 package com.backsofangels.ingsw.search
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,9 +30,11 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
     private lateinit var searchResultsRecyclerView: RecyclerView
     private lateinit var searchResultsRecyclerViewAdapter: SearchResultsRecyclerViewAdapter
     private var disposable: Disposable? = null
-    private var restaurantSearch = true
-    private var hotelSearch = true
-    private var attractionSearch = true
+
+    //TODO: save state of toggles in user preferences to keep consistency between different searches and align UI
+    private var restaurantSearch = false
+    private var hotelSearch = false
+    private var attractionSearch = false
 
     private val structureApiService: StructureApi by lazy {
         RetrofitConfig.create(StructureApi::class)
@@ -50,30 +54,30 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
         super.onViewCreated(view, savedInstanceState)
         searchFragmentSearchView.isIconified = true
 
-        toggleRestaurantsButton.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(p0: View?) {
-                restaurantSearch = restaurantSearch.not()
-                Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleRestaurantsButton with value ${restaurantSearch.toString()}")
-            }
-        })
+        toggleRestaurantsButton.setOnClickListener {
+            restaurantSearch = restaurantSearch.not()
+            if (restaurantSearch) {
+                toggleRestaurantsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonPressed))
+            } else toggleRestaurantsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonDefault))
+            Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleRestaurantsButton with value ${restaurantSearch.toString()}")
+        }
 
-        toggleHotelsButton.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(p0: View?) {
-                hotelSearch = hotelSearch.not()
-                Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleHotelsButton with value ${hotelSearch.toString()}")
-            }
-        })
+        toggleHotelsButton.setOnClickListener {
+            hotelSearch = hotelSearch.not()
+            if (hotelSearch) {
+                toggleHotelsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonPressed))
+            } else toggleHotelsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonDefault))
+            Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleHotelsButton with value ${hotelSearch.toString()}")
+        }
 
-        toggleAttractionsButton.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(p0: View?) {
-                attractionSearch = attractionSearch.not()
-                if (attractionSearch) {
-                    
-                } else toggleAttractionsButton.setBackgroundColor(0xffb85f5f.toInt())
+        toggleAttractionsButton.setOnClickListener {
+            attractionSearch = attractionSearch.not()
+            if (attractionSearch) {
+                toggleAttractionsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonPressed))
+            } else toggleAttractionsButton.setBackgroundColor(ContextCompat.getColor(activity?.applicationContext!!, R.color.toggleButtonDefault))
 
-                Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleAttractionsButton with value ${attractionSearch.toString()}")
-            }
-        })
+            Log.d(LogTags.UI_SEARCH_FRAGMENT.tag, "pressed toggleAttractionsButton with value ${attractionSearch.toString()}")
+        }
 
         searchFragmentSearchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
