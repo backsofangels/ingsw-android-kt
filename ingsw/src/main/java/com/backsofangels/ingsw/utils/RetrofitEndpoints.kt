@@ -18,4 +18,5 @@ object RetrofitEndpoints {
     const val AUTH_LOGIN = "/auth/login"
     const val AUTH_SIGNUP = "/auth/signup"
     const val AUTH_REFRESHTOKEN = "/auth/refreshToken"
+    const val AUTH_USERPROFILE = "/auth/me"
 }

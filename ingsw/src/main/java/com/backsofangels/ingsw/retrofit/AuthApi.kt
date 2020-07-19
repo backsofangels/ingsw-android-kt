@@ -3,10 +3,7 @@ package com.backsofangels.ingsw.retrofit
 import com.backsofangels.ingsw.model.User
 import com.backsofangels.ingsw.utils.RetrofitEndpoints
 import io.reactivex.rxjava3.core.Observable
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 
 interface AuthApi {
@@ -22,4 +19,9 @@ interface AuthApi {
 
     @GET(RetrofitEndpoints.AUTH_REFRESHTOKEN)
     fun refreshToken(): Observable<*>?
+
+    @GET(RetrofitEndpoints.AUTH_USERPROFILE)
+    fun me(
+            @Query("username") username: String
+    ): Observable<User>
 }
