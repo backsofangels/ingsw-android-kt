@@ -1,11 +1,15 @@
 <resources>
+    <!-- Strings used by app for settings -->
     <string name="app_name">Ingsw</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+    <string name="preferences_file_key">user_settings</string>
+    
+    <!-- Strings used by fragments for UI -->
     <string name="bottomNavigationHomeTitle">Home</string>
     <string name="bottomNavigationProfile">Profile</string>
     <string name="bottomNavigationFavorites">Favorites</string>
     <string name="searchPromptRestaurantsToggle">Restaurant</string>
     <string name="searchPromptHotelsToggle">Hotel</string>
     <string name="searchPromptAttractionsToggle">Attraction</string>
+    <string name="profileFragmentReviewsDelimiter">Your reviews</string>
 </resources>
