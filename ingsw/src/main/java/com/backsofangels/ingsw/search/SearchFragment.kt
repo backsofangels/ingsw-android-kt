@@ -40,11 +40,6 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
         RetrofitConfig.create(StructureApi::class)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentSearchPromptBinding.inflate(inflater, container, false)
         return binding.root

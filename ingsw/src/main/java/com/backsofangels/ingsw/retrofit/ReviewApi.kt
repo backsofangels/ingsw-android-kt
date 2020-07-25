@@ -18,14 +18,14 @@ interface ReviewApi {
             @Query("structure") structure: Structure?,
             @Query("limit") limit: Int?,
             @Query("page") page: Int?
-    ): Observable<Review?>?
+    ): Observable<Array<Review>>
 
     @GET(RetrofitEndpoints.REVIEW_GET_FOR_USER)
     fun getReviewsForUser(
             @Query("user") user: User?,
             @Query("limit") limit: Int?,
             @Query("page") page: Int?
-    ): Observable<Review?>?
+    ): Observable<Array<Review>>
 
     @POST(RetrofitEndpoints.REVIEW_POST)
     fun postNewReview(
