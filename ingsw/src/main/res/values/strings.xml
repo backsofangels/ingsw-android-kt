@@ -12,4 +12,8 @@
     <string name="searchPromptHotelsToggle">Hotel</string>
     <string name="searchPromptAttractionsToggle">Attraction</string>
     <string name="profileFragmentReviewsDelimiter">Your reviews</string>
+    <string name="loginFragmentUsernameEditTextHint">username</string>
+    <string name="loginFragmentPasswordEditTextHint">password</string>
+    <string name="loginFragmentLoginButtonText">Login</string>
+    <string name="profilePictureStringDescription">Profile image of user</string>
 </resources>

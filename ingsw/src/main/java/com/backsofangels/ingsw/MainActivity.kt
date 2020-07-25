@@ -23,17 +23,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 class MainActivity : AppCompatActivity() {
     private lateinit var bindingModule: ActivityMainBinding
 
-    //LazyInit made for every different api interface
-
-
-    private val searchReviewApiService by lazy {
-        RetrofitConfig.create(ReviewApi::class)
-    }
-
-    private val authReviewApiService by lazy {
-        RetrofitConfig.create(AuthApi::class)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,21 +39,23 @@ class MainActivity : AppCompatActivity() {
                     Log.d(LogTags.UI_ACTIVITY_NAVIGATION.tag, "Inflating HomeFragment")
                     fragmentManager.
                     beginTransaction()
-                            .add(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, HomeFragment::class.simpleName!!), "HomeFragment")
+                            .replace(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, HomeFragment::class.simpleName!!), "HomeFragment")
                             .addToBackStack("HomeFragment")
                             .commit()
                 }
                 R.id.bottomNavigationViewFavorites -> {
-                    Log.d(LogTags.UI_ACTIVITY_NAVIGATION.tag, "favorites")
+                    Log.d(LogTags.UI_ACTIVITY_NAVIGATION.tag, "Inflating Favorites")
                     fragmentManager.beginTransaction()
-                            .add(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, FavoritesFragment::class.simpleName!!), "FavoritesFragment")
+                            .replace(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, FavoritesFragment::class.simpleName!!), "FavoritesFragment")
+                            .addToBackStack("FavoritesFragment")
                             .commit()
                 }
                 R.id.bottomNavigationViewProfile -> {
-                    Log.d(LogTags.UI_ACTIVITY_NAVIGATION.tag, "profile")
+                    Log.d(LogTags.UI_ACTIVITY_NAVIGATION.tag, "Inflating Profile")
                     fragmentManager
                             .beginTransaction()
-                            .add(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, ProfileFragment::class.simpleName!!), "ProfileFragment")
+                            .replace(bindingModule.mainActivityFragmentPlaceholderView.id, ApplicationFragmentFactory.instantiate(this.classLoader, ProfileFragment::class.simpleName!!), "ProfileFragment")
+                            .addToBackStack("ProfileFragment")
                             .commit()
                 }
             }
