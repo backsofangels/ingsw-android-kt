@@ -1,11 +1,21 @@
 package com.backsofangels.ingsw.model
 
 class User {
-    private var id: Long = 0
-    private lateinit var email: String
-    private lateinit var username: String
-    private lateinit var firstName: String
-    private lateinit var lastName: String
+    private var id: Long
+    private var email: String
+    private var username: String
+    private var firstName: String
+    private var lastName: String
+
+    private val defaultStringValue = "default"
+
+    init {
+        id = Long.MIN_VALUE
+        email = defaultStringValue
+        username = defaultStringValue
+        firstName = defaultStringValue
+        lastName = defaultStringValue
+    }
 
     constructor() {}
 
