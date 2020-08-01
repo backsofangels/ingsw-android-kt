@@ -3,6 +3,7 @@ package com.backsofangels.ingsw.retrofit
 import com.backsofangels.ingsw.model.Hotel
 import com.backsofangels.ingsw.model.Restaurant
 import com.backsofangels.ingsw.model.Structure
+import com.backsofangels.ingsw.model.TouristAttraction
 import com.backsofangels.ingsw.utils.RetrofitEndpoints
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
@@ -14,7 +15,7 @@ interface StructureApi {
     fun getAllStructures(
             @Query("limit") limit: Int?,
             @Query("page") pageNumber: Int?
-    ): Observable<Array<Structure>>
+    ): Observable<Array<Structure>?>
 
     @GET(RetrofitEndpoints.RESTAURANT_SEARCH_URL)
     fun getRestaurants(
@@ -24,7 +25,7 @@ interface StructureApi {
             @Query("priceRange") priceRange: Int?,
             @Query("limit") limit: Int?,
             @Query("page") pageNumber: Int?
-    ): Observable<Array<Restaurant>>
+    ): Observable<Array<Restaurant>?>
 
     @GET(RetrofitEndpoints.HOTEL_SEARCH_URL)
     fun getHotels(
@@ -34,7 +35,7 @@ interface StructureApi {
             @Query("priceRange") priceRange: Int?,
             @Query("limit") limit: Int?,
             @Query("page") page: Int?
-    ): Observable<Hotel>
+    ): Observable<Array<Hotel>?>
 
     @GET(RetrofitEndpoints.ATTRACTION_SEARCH_URL)
     fun getAttractions(
@@ -44,5 +45,5 @@ interface StructureApi {
             @Query("priceRange") priceRange: Int?,
             @Query("limit") limit: Int?,
             @Query("page") page: Int?
-    ): Observable<Hotel>
+    ): Observable<Array<TouristAttraction>?>
 }

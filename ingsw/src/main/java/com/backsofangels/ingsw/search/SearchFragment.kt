@@ -116,8 +116,8 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe (
-                        { _ -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "Restaurants query") },
-                        { error -> Log.e(LogTags.RETROFIT_STRUCTURE_API.tag, error.message.toString())}
+                            { result -> result?.forEach { singleResult -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, singleResult.toString()) } },
+                            { error -> Log.e(LogTags.RETROFIT_STRUCTURE_API.tag, error.message.toString())}
                     )
         } else Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "No restaurant query")
     }
@@ -128,7 +128,7 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe (
-                            { _ -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "Hotels query") },
+                            { result -> result?.forEach { singleResult -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, singleResult.toString()) } },
                             { error -> Log.e(LogTags.RETROFIT_STRUCTURE_API.tag, error.message.toString())}
                     )
         } else Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "No hotels query")
@@ -140,7 +140,7 @@ class SearchFragment: Fragment(R.layout.fragment_search_prompt) {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe (
-                            { _ -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "Attractions") },
+                            { result -> result?.forEach { singleResult -> Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, singleResult.toString()) } },
                             { error -> Log.e(LogTags.RETROFIT_STRUCTURE_API.tag, error.message.toString())}
                     )
         } else Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "No attractions query")
