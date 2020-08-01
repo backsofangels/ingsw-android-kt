@@ -54,8 +54,10 @@ class StructuresRecyclerAdapter(): RecyclerView.Adapter<StructuresRecyclerAdapte
         return 3
     }
 
-    fun reloadDataSet(structures: Array<Structure>) {
-        structuresDataSet = structures
+    fun reloadDataSet(structures: Array<Structure>?) {
+        if (!structures.isNullOrEmpty()) {
+            structuresDataSet = structures
+        }
         notifyDataSetChanged()
     }
 }

@@ -60,6 +60,7 @@ class HomeFragment: Fragment(R.layout.fragment_home_layout) {
             layoutManager = LinearLayoutManager(activity?.baseContext!!, RecyclerView.HORIZONTAL, false)
             adapter = structuresRecyclerViewAdapter
         }
+        performStructureSearch(10, 0)
         homeFragmentSearchView.setOnSearchClickListener {
             Log.d("transition", "transition")
             val fragment = ApplicationFragmentFactory.instantiate(this.activity?.classLoader!!, "SearchFragment")
@@ -87,7 +88,7 @@ class HomeFragment: Fragment(R.layout.fragment_home_layout) {
                 .subscribe(
                         {result ->
                             run {
-                                Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, result.size.toString())
+                                Log.d(LogTags.RETROFIT_STRUCTURE_API.tag, "Calling top picks with result size ${result?.size}")
                                 structuresRecyclerViewAdapter?.reloadDataSet(result)
                             }
                         },
