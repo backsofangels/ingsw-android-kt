@@ -16,4 +16,7 @@
     <string name="loginFragmentPasswordEditTextHint">password</string>
     <string name="loginFragmentLoginButtonText">Login</string>
     <string name="profilePictureStringDescription">Profile image of user</string>
+
+    <!-- Strings used for UI completion -->
+    <string name="structureAddressTemplate">%1$s %2$s, %3$s</string>
 </resources>

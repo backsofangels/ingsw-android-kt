@@ -1,23 +1,32 @@
 package com.backsofangels.ingsw.model
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+
+@JsonIgnoreProperties("id")
 class Review {
-    var user: User
-    var structure: Structure
+    var userId: Int
+    var structureId: Int
+    var title: String
+    var username: String
     var rating: Int
     var description: String
 
     init {
-        user = User()
-        structure = Structure()
+        userId = 0
+        structureId = 0
+        username = ""
+        title = "test"
         rating = Int.MIN_VALUE
         description = "default"
     }
 
     constructor()
 
-    constructor(user: User, structure: Structure, rating: Int, description: String) {
-        this.user = user
-        this.structure = structure
+    constructor(userId: Int, structureId: Int, title: String, username: String, rating: Int, description: String) {
+        this.userId = userId
+        this.structureId = structureId
+        this.username = username
+        this.title = title
         this.rating = rating
         this.description = description
     }

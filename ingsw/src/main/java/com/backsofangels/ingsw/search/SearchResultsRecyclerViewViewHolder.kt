@@ -32,7 +32,6 @@ class SearchResultsRecyclerViewViewHolder(inflater: LayoutInflater, parent: View
         cardViewStructureNameTextView = itemView.findViewById(R.id.structureCardViewNameTextView)
         cardViewStructureRatingBar = itemView.findViewById(R.id.cardViewStructureRatingBar)
         cardViewStructureLabel = TextView(context)
-
     }
 
     fun bind(structure: Structure?) {

@@ -21,7 +21,7 @@ class ProfileFragmentReviewRecyclerViewHolder(inflater: LayoutInflater, parent: 
     }
 
     fun bind(review: Review) {
-        structureName?.text = review.structure.name
+        //structureName?.text = review.structure.name
         reviewRating?.rating = review.rating.toFloat()
         reviewDescription?.text = review.description
     }

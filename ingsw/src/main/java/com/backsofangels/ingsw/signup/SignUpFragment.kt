@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.backsofangels.ingsw.R
-import com.backsofangels.ingsw.model.User
 import com.backsofangels.ingsw.model.UserDto
 import com.backsofangels.ingsw.retrofit.AuthApi
 import com.backsofangels.ingsw.retrofit.RetrofitConfig

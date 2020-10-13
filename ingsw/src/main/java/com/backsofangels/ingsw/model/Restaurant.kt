@@ -1,12 +1,19 @@
 package com.backsofangels.ingsw.model
 
+import com.backsofangels.ingsw.utils.LocalTimeDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import java.time.LocalTime
 import java.util.*
 
 
 class Restaurant: Structure{
     var michelinRating: Int
+
+    @JsonDeserialize(using = LocalTimeDeserializer::class)
     var openingTime: LocalTime
+
+    @JsonDeserialize(using = LocalTimeDeserializer::class)
     var closingTime: LocalTime
     var cookingTypes: Set<String>
 

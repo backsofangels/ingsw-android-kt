@@ -11,7 +11,6 @@ import com.backsofangels.ingsw.R
 import com.backsofangels.ingsw.retrofit.AuthApi
 import com.backsofangels.ingsw.retrofit.RetrofitConfig
 import com.backsofangels.ingsw.utils.LogTags
-import com.backsofangels.ingsw.utils.LoginStatus
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers

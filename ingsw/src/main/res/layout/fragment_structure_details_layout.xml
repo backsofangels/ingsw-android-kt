@@ -30,7 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="AAAA"
                 android:id="@+id/structureFragmentStructureNameTextView"/>
 
             <HorizontalScrollView
@@ -50,58 +49,58 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_marginEnd="15dp"
-                        android:text="TEST UNO"/>
+                        android:id="@+id/structureFragmentTagTextViewOne"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_marginEnd="15dp"
-                        android:text="TEST DUE"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginEnd="15dp"
-                        android:text="TEST TRE"/>
+                        android:id="@+id/structureFragmentTagTextViewTwo"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_marginEnd="15dp"
-                        android:text="TEST QUATTRO"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_marginEnd="15dp"
-                        android:text="TEST CINQUE MOLTO LUNGO"/>
+                        android:id="@+id/structureFragmentTagTextViewThree"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_marginEnd="15dp"
-                        android:text="TEST SEI"/>
+                        android:id="@+id/structureFragmentTagTextViewFour"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        android:id="@+id/structureFragmentTagTextViewFive"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        android:id="@+id/structureFragmentTagTextViewSix"/>
+
                 </LinearLayout>
             </HorizontalScrollView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Via Enrico fermi 18"
+                android:id="@+id/structureFragmentAddressTextView"
                 android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="match_parent"
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
-                android:text="Questo è un testo molto lungo usato per prova dell'andare a capo della descrizone di una struttura, ovviamente viene usato per fare sì che si riesca a capire se effettivamente viene renderizzato bene il tutto e poter tailorare bene i parametri come necessario."
-                android:textSize="20sp"
-
-                android:scrollHorizontally="false"
-                />
-
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/structureFragmentReviewsRecyclerView"/>
 
         </LinearLayout>
     </ScrollView>

@@ -1,6 +1,7 @@
 package com.backsofangels.ingsw.retrofit
 
 import com.backsofangels.ingsw.utils.RetrofitEndpoints
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
